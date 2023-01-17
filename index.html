@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script src="/script.js"></script>
 <head>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +16,8 @@
 
   <!-- /* header */ -->
 
-<header class="header">
-    <div class= "container">
+  <header class="header">
+    <div class="container">
       <div class="header__inner">
         <div class="header__logo">
           <img src="img/Header/Logo.png" alt="">
@@ -31,48 +34,51 @@
         </button>
       </div>
     </div>
-</header>
+  </header>
 
   <!-- /* Intro */ -->
 
 
-<div class="intro">
-  <div class="container__intro">
-    <div class="intro__inner">
-      <div class="intro__logo">
-        <img src="img/Header/Logo.png" alt="">
+  <div class="intro">
+    <div class="container__intro">
+      <div class="intro__inner">
+        <div class="intro__logo">
+          <img src="img/Header/Logo.png" alt="">
+        </div>
+        <h1 class="intro__title">Modern Axure Template for beautiful prototypes</h1>
+        <h2 class="intro__subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis sint molestiae sed
+          impedit placeat optio temporibus sunt laboriosam ipsa, blanditiis facere dolores a? Rerum aperiam </h2>
+        <button class="btn__download btn--red" type="button">Download</button>
       </div>
-      <h1 class="intro__title">Modern Axure Template for beautiful prototypes</h1>
-      <h2 class="intro__subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis sint molestiae sed impedit placeat optio temporibus sunt laboriosam ipsa, blanditiis facere dolores a? Rerum aperiam </h2>
-      <button class="btn__download btn--red" type="button">Download</button>
-    </div>
 
 
-    <div class="intro__registration">
-      <div class="intro__registration__form">
-        <h4 class="form__title">Try Your <span class="colortext">FREE</span> Trial Today</h4>
-      <form class="form">
-       <div class="form__field"><input type="text" placeholder="Name" class="input input:active"></div>
-       <div class="form__field"><input type="text" placeholder="Email" class="input"></div>
-       <div class="form__field"><input type="text" placeholder="Password" class="input"></div>
-      </form>
-      <div class="form__button">
-        <button class="btn__registration btn--red btn--long">Get Started</button>
+      <div class="intro__registration">
+        <div class="intro__registration__form">
+          <h4 class="form__title">Try Your <span class="colortext">FREE</span> Trial Today</h4>
+          <form class="form">
+            <div class="form__field"><input type="text" placeholder="Name" class="input input:active"></div>
+            <div class="form__field"><input type="text" placeholder="Email" class="input"></div>
+            <div class="form__field"><input type="text" placeholder="Password" class="input"></div>
+          </form>
+          <div class="form__button">
+            <button class="btn__registration btn--red btn--long">Get Started</button>
+          </div>
+        </div>
       </div>
-      </div> 
     </div>
   </div>
-</div>
 
 
   <!-- Social__media -->
 
   <div class="social__media">
-    <div class= "container">
+    <div class="container">
       <div class="social__inner">
-        <div class="social__title"><h4>Social Media</h4>
-        <h5 class="social__subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis tenetur a perferendis vero asperiores..</h5>
-      </div>
+        <div class="social__title">
+          <h4>Social Media</h4>
+          <h5 class="social__subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis tenetur a
+            perferendis vero asperiores..</h5>
+        </div>
         <nav class="nav">
           <a class="social__icon" href="#">
             <img src="img/free-icon-facebook-1077041.png" height="40px" width="40px" alt="">
@@ -98,310 +104,371 @@
   </div>
 
 
-<!-- Tabs -->
+  <!-- Tabs -->
 
 
-<div class="tabs">
-  <div class="container__tabs">
-    <div class="switch">
-    <button class="switch__tab1 btn--red">TAB 1</button>
-    <button class="switch__tab2 btn--red">TAB 2</button>
-    <button class="switch__tab3 btn--red">TAB 3</button>
+  <div class="tabs">
+    <div class="container__tabs">
+      <div class="switch">
+
+        <button class="switch__tab1 btn--red active" onclick="currentSlide(1)">TAB 1</button>
+        <button class="switch__tab2 btn--red" onclick="currentSlide(2)">TAB 2</button>
+        <button class="switch__tab3 btn--red" onclick="currentSlide(3)">TAB 3</button>
+      
+      </div>
+
+
+      <div class="tabs__inner">
+        <h1 class="tabs__title">Tabs with soft transitioning effect.</h1>
+        <h2 class="tabs__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis
+          optio quo hic magni! Deleniti asperiores repudiandae quo,
+          aut impedit facilis ad consectetur ratione officiis magnam sit, quidem fugiat sequi!
+          Veritatis optio ut aperiam necessitatibus odio tempora aspernatur. Ad. <br>
+          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero consectetur sint a voluptate, eum quae.</h2>
+          <a href="/img/free-icon-facebook-1077041.png" download="">
+        <button class="btn__tabs__download btn--red"  type="button">Download</button>
+      </a>
+      </div>
+
+
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="/img/tabs/image_right_u255.png" style="width:100%" class="tab1">
+      </div>
+      <div class="mySlides fade">
+        <img src="/img/reason/keyboard.png" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="/img/reason/lightning.png" style="width:100%">
+      </div>
+    
+      <!-- Next and previous buttons -->
+      <!-- <a class="prev" onclick="plusSlides(-1)"></a>
+      <a class="next" onclick="plusSlides(1)"></a> -->
     </div>
-    <div class="tabs__inner">
-      <h1 class="tabs__title">Tabs with soft transitioning effect.</h1>
-      <h2 class="tabs__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis 
-        optio quo hic magni! Deleniti asperiores repudiandae quo, 
-        aut impedit facilis ad consectetur ratione officiis magnam sit, quidem fugiat sequi! 
-        Veritatis optio ut aperiam necessitatibus odio tempora aspernatur. Ad. <br>
-        <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero consectetur sint a voluptate, eum quae.</h2>
-      <button class="btn__tabs__download btn--red" type="button">Download</button>
     </div>
-
-
-    <div class="tabs__img">
-      <img src="img/tabs/image_right_u255.png" alt="">
-    </div>
-</div>
 
 
     <!-- Sub section -->
     <div class="container">
-    <div class="sub">
-    <div class="sub__img">
-      <img src="img/tabs/image_left_sub_list_u260.png" alt="">
-    </div>
+      <div class="sub">
+        <div class="sub__img">
+          <img src="img/tabs/image_left_sub_list_u260.png" alt="">
+        </div>
 
-      <div class="sub__container">
-        <div class="sub__inner">
-          <h1 class="sub__title">Sub list Section </h1>
-          <hr class="sub__line">
-          <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis 
-            optio quo hic magni! Deleniti asperiores repudiandae quo </h2>
+        <div class="sub__container">
+          <div class="sub__inner">
+            <h1 class="sub__title">Sub list Section </h1>
+            <hr class="sub__line">
+            <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis
+              optio quo hic magni! Deleniti asperiores repudiandae quo </h2>
 
             <div class="download__sky1">
               <img src="img/tabs/cloud-computing.png" height="40px" alt="">
               <div class="sub__text">
-              <h4 class="sky__text">asdas</h4>
-              <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis 
-                optio quo hic magni! Deleniti asperiores repudiandae quo </h2>
+                <h4 class="sky__text">asdas</h4>
+                <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis
+                  optio quo hic magni! Deleniti asperiores repudiandae quo </h2>
               </div>
             </div>
 
             <div class="download__sky1">
               <img src="img/tabs/cloud-computing (1).png" height="40px" alt="">
               <h4 class="sky__text">asdas</h4>
-              <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis 
+              <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, odio corporis
                 optio quo hic magni! Deleniti asperiores repudiandae quo </h2>
             </div>
- 
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-<!-- standart__picture -->
-
-
-<div class="container">
-  <div class="sub">
+    <!-- standart__picture -->
 
 
-    <div class="sub__container">
-      <div class="sub__inner">
-        <h1 class="sub__title">Sub list Section</h1>
-        <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur 
-          adipisicing elit. Ex, odio corporis 
-          optio quo hic magni! Deleniti asperiores repudiandae quo </h2>
+    <div class="container">
+      <div class="sub">
 
 
+        <div class="sub__container">
+          <div class="sub__inner">
+            <h1 class="sub__title">Sub list Section</h1>
+            <h2 class="sub__subtitle">Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Ex, odio corporis
+              optio quo hic magni! Deleniti asperiores repudiandae quo </h2>
+
+
+          </div>
+        </div>
+        <div class="sub__img">
+          <img src="img/tabs/image_left_sub_list_u260.png" alt="">
+        </div>
       </div>
     </div>
-    <div class="sub__img">
-      <img src="img/tabs/image_left_sub_list_u260.png" alt="">
-    </div>
-  </div>
-</div>
 
 
-<!-- reason -->
+    <!-- reason -->
 
-<div class="container__reasons">
-  <div class="container">
-  <div class="reasons">
+    <div class="container__reasons">
+      <div class="container">
+        <div class="reasons">
 
-    <div class="question">
-      <h1 class="awesome">Why this is awesome</h1>
-      <hr class="awesome__line">
-      <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
-    </div>
-
-
-    <div class="answer">
-      <div class="answers">
-      <img class="circle" src="/img/reason/bulb.png" alt="">
-      <div><h1 class="answer__text">Thoughtful Design</h1><h2 class="awesome1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolor libero voluptatum ut nisi quae officiis fugit porro consectetur ratione!</h2></div>
-    </div>
-    <div class="answers">
-      <img class="circle" src="/img/reason/keyboard.png" alt="">
-      <div><h1 class="answer__text">Well Crafted</h1><h2 class="awesome1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolor libero voluptatum ut nisi quae officiis fugit porro consectetur ratione!</h2></div>
-    </div>
-    <div class="answers">
-      <img class="circle" src="/img/reason/lightning.png" alt="">
-      <div><h1 class="answer__text">Easy to Customize</h1><h2 class="awesome1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolor libero voluptatum ut nisi quae officiis fugit porro consectetur ratione!</h2></div>
-    </div>
-    </div>
-  </div>
-</div>
-
-</div>
+          <div class="question">
+            <h1 class="awesome">Why this is awesome</h1>
+            <hr class="awesome__line">
+            <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
+          </div>
 
 
-
-<!--options -->
-
-
-<div class="container__options">
-  <div class="container">
-  <div class="reasons">
-
-    <div class="question">
-      <h1 class="awesome">Pricing Options</h1>
-      <hr class="awesome__line">
-      <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
-    </div>
-
-
-    <div class="various">
-
-     <div class="subscription">
-      <div ><h1 class="type">Basic</h1></div>
-      <div class="cost"><h1>$0</h1></div>
-      <h2 class="popularity"></h2>
-      <h2 class="offer">1 gb of space</h2>
-      <h2 class="offer">10 gb of bandwidth</h2>
-      <h2 class="offer">3 websites</h2>
-      <h2 class="offer">Basic Customization</h2>
-      <h2 class="offer">wordpress integration</h2>
-      <h2 class="offer">email support</h2>
-     </div>
-
-     <div class="subscription1">
-      <div class="type"><h1>Professional</h1></div>
-      <div class="cost"><h1>$19</h1></div>
-      <h2 class="popularitytext">Our Most Popular</h2>
-      <h2 class="offer">5 gb of space</h2>
-      <h2 class="offer">50 gb of bandwidth</h2>
-      <h2 class="offer">12 websites</h2>
-      <h2 class="offer">Advanced Customization</h2>
-      <h2 class="offer">wordpress integration</h2>
-      <h2 class="offer">email support</h2>
-     </div>
-
-     <div class="subscription">
-      <div class="type"><h1>Enterprise</h1></div>
-      <div class="cost"><h1>$70</h1></div>
-      <h2 class="popularity"></h2>
-      <h2 class="offer">Unlimited space</h2>
-      <h2 class="offer">unlimited bandwidth</h2>
-      <h2 class="offer">100 websites</h2>
-      <h2 class="offer">Advanced Customization</h2>
-      <h2 class="offer">wordpress integration</h2>
-      <h2 class="offer">24/7 customer support</h2>
-     </div>
+          <div class="answer">
+            <div class="answers">
+              <img class="circle" src="/img/reason/bulb.png" alt="">
+              <div>
+                <h1 class="answer__text">Thoughtful Design</h1>
+                <h2 class="awesome1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolor libero
+                  voluptatum ut nisi quae officiis fugit porro consectetur ratione!</h2>
+              </div>
+            </div>
+            <div class="answers">
+              <img class="circle" src="/img/reason/keyboard.png" alt="">
+              <div>
+                <h1 class="answer__text">Well Crafted</h1>
+                <h2 class="awesome1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolor libero
+                  voluptatum ut nisi quae officiis fugit porro consectetur ratione!</h2>
+              </div>
+            </div>
+            <div class="answers">
+              <img class="circle" src="/img/reason/lightning.png" alt="">
+              <div>
+                <h1 class="answer__text">Easy to Customize</h1>
+                <h2 class="awesome1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolor libero
+                  voluptatum ut nisi quae officiis fugit porro consectetur ratione!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
-  </div>
-</div>
-
-</div>
-
-
-<!-- comments -->
-
-<div class="container__comments">
-  <div class="container">
-  <div class="reasons">
-
-    <div class="question">
-      <h1 class="awesome">WHAT OUR CUSTOMERS ARE SAYING</h1>
-      <hr class="awesome__line">
-      <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
-    </div>
-
-
-    <div class="comments__include">
-      <div class="commenting">
-      <div class="comment__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel inventore magni mollitia non assumenda quae consequuntur</div>
-      <div class="comment"><img class="comment__image" src="/img/comments/u229.png" alt=""></div>
-      <div class="person"><img src="/img/comments/avatar_2_u231.png" alt="" ><div class="person__info"><h1 class="comments__name">Jeremy H.</h1><h2 class="proffesion">Manager</h2></div>
-    </div>
-    </div>
-      <div class="commenting">
-      <div class="comment__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel inventore magni mollitia non assumenda quae consequuntur</div>
-      <div class="comment"><img class="comment__image" src="/img/comments/u229.png" alt=""></div>
-      <div class="person"><img src="/img/comments/avatar_2_u231.png" alt=""><div class="person__info"><h1 class="comments__name">John S.</h1><h2 class="proffesion">Freelancer</h2></div>
-    </div>
-    </div>
-      <div class="commenting">
-      <div class="comment__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel inventore magni mollitia non assumenda quae consequuntur</div>
-      <div class="comment"><img class="comment__image" src="/img/comments/u229.png" alt=""></div>
-      <div class="person"><img src="/img/comments/avatar_2_u231.png" alt=""><div class="person__info"><h1 class="comments__name">Susan W.</h1><h2 class="proffesion">Photographer</h2></div>
-    </div>
-    </div>  
-    </div>
-  </div>
-</div>
-
-</div>
-
-<!-- stylish -->
 
 
 
-<div class="container__stylish">
-  <div class="container">
-  <div class="stylish">
-
-    <div class="question">
-      <h1 class="design">STYLISH AXURE DESIGN</h1>
-      <hr class="stylish__line">
-      <h2 class="gorgeous">Use the sections you need, remove the ones you don't. Create gorgeous prototypes laster then ever! </h2>
-    </div>
-    <div class="button__stylish"><button class="btn__download btn--red" type="button">Download</button></div>
-  </div>
-  </div>
-</div>
+    <!--options -->
 
 
-<!-- contact -->
+    <div class="container__options">
+      <div class="container">
+        <div class="reasons">
+
+          <div class="question">
+            <h1 class="awesome">Pricing Options</h1>
+            <hr class="awesome__line">
+            <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
+          </div>
 
 
-<div class="container__contact">
-  <div class="container">
-  <div class="contact">
+          <div class="various">
 
-    <div class="question">
-      <h1 class="awesome">CONTACT US</h1>
-      <hr class="awesome__line">
-      <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
+            <div class="subscription">
+              <div>
+                <h1 class="type">Basic</h1>
+              </div>
+              <div class="cost">
+                <h1>$0</h1>
+              </div>
+              <h2 class="popularity"></h2>
+              <h2 class="offer">1 gb of space</h2>
+              <h2 class="offer">10 gb of bandwidth</h2>
+              <h2 class="offer">3 websites</h2>
+              <h2 class="offer">Basic Customization</h2>
+              <h2 class="offer">wordpress integration</h2>
+              <h2 class="offer">email support</h2>
+            </div>
+
+            <div class="subscription1">
+              <div class="type">
+                <h1>Professional</h1>
+              </div>
+              <div class="cost">
+                <h1>$19</h1>
+              </div>
+              <h2 class="popularitytext">Our Most Popular</h2>
+              <h2 class="offer">5 gb of space</h2>
+              <h2 class="offer">50 gb of bandwidth</h2>
+              <h2 class="offer">12 websites</h2>
+              <h2 class="offer">Advanced Customization</h2>
+              <h2 class="offer">wordpress integration</h2>
+              <h2 class="offer">email support</h2>
+            </div>
+
+            <div class="subscription">
+              <div class="type">
+                <h1>Enterprise</h1>
+              </div>
+              <div class="cost">
+                <h1>$70</h1>
+              </div>
+              <h2 class="popularity"></h2>
+              <h2 class="offer">Unlimited space</h2>
+              <h2 class="offer">unlimited bandwidth</h2>
+              <h2 class="offer">100 websites</h2>
+              <h2 class="offer">Advanced Customization</h2>
+              <h2 class="offer">wordpress integration</h2>
+              <h2 class="offer">24/7 customer support</h2>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
 
 
-  <div class="user__contact__data">
-    <div class="contact__data">
-    <form class="form__contact">
-      <div class="form__field__contact"><input type="text" placeholder="Name" class="input input:active"></div>
-      <div class="form__field__contact"><input type="text" placeholder="Email" class="input"></div>
-      <div class="form__field__contact"><input type="text" placeholder="Password" class="input"></div>
-    </form>
+    <!-- comments -->
+
+    <div class="container__comments">
+      <div class="container">
+        <div class="reasons">
+
+          <div class="question">
+            <h1 class="awesome">WHAT OUR CUSTOMERS ARE SAYING</h1>
+            <hr class="awesome__line">
+            <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
+          </div>
+
+
+          <div class="comments__include">
+            <div class="commenting">
+              <div class="comment__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel inventore magni
+                mollitia non assumenda quae consequuntur</div>
+              <div class="comment"><img class="comment__image" src="/img/comments/u229.png" alt=""></div>
+              <div class="person"><img src="/img/comments/avatar_2_u231.png" alt="">
+                <div class="person__info">
+                  <h1 class="comments__name">Jeremy H.</h1>
+                  <h2 class="proffesion">Manager</h2>
+                </div>
+              </div>
+            </div>
+            <div class="commenting">
+              <div class="comment__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel inventore magni
+                mollitia non assumenda quae consequuntur</div>
+              <div class="comment"><img class="comment__image" src="/img/comments/u229.png" alt=""></div>
+              <div class="person"><img src="/img/comments/avatar_2_u231.png" alt="">
+                <div class="person__info">
+                  <h1 class="comments__name">John S.</h1>
+                  <h2 class="proffesion">Freelancer</h2>
+                </div>
+              </div>
+            </div>
+            <div class="commenting">
+              <div class="comment__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel inventore magni
+                mollitia non assumenda quae consequuntur</div>
+              <div class="comment"><img class="comment__image" src="/img/comments/u229.png" alt=""></div>
+              <div class="person"><img src="/img/comments/avatar_2_u231.png" alt="">
+                <div class="person__info">
+                  <h1 class="comments__name">Susan W.</h1>
+                  <h2 class="proffesion">Photographer</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="message__data">
-      <form class="form__contact">
-      <div class="form__field__contact"><input type="text" placeholder="Message" class="input"></div>
-     </form>
-    </div>
-  </div>
-
-
-  <div class="send__message">
-     <div class="form__button">
-       <button class="btn__message btn--red btn--long">Send Message</button>
-     </div>
-  </div>
-  </div>
-  </div>
-</div>
+    <!-- stylish -->
 
 
 
-<!-- footer -->
+    <div class="container__stylish">
+      <div class="container">
+        <div class="stylish">
 
-<div class="footer">
-  <div class= "container">
-    <div class="footer__inner">
-      <nav class="nav">
-        <a class="social__icon" href="#">
-          <img src="img/free-icon-facebook-1077041.png" height="40px" width="40px" alt="">
-        </a>
-        <a class="social__icon" href="#">
-          <img src="img/free-icon-social-media-4335850.png" height="40px" width="40px" alt="">
-        </a>
-        <a class="social__icon" href="#">
-          <img src="img/free-icon-instagram-1077042.png" height="40px" width="40px" alt="">
-        </a>
-        <a class="social__icon" href="#">
-          <img src="img/free-icon-telegram-739260.png" height="40px" width="40px" alt="">
-        </a>
-        <a class="social__icon" href="#">
-          <img src="img/free-icon-whatsapp-1384023.png" height="40px" width="40px" alt="">
-        </a>
-      </nav>
-      <div class="social__title">
-        <h5 class="social__subtitle">© 2015 Axure Themes</h5>
+          <div class="question">
+            <h1 class="design">STYLISH AXURE DESIGN</h1>
+            <hr class="stylish__line">
+            <h2 class="gorgeous">Use the sections you need, remove the ones you don't. Create gorgeous prototypes laster
+              then ever! </h2>
+          </div>
+          <div class="button__stylish"><button class="btn__download btn--red" type="button">Download</button></div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+
+    <!-- contact -->
+
+
+    <div class="container__contact">
+      <div class="container">
+        <div class="contact">
+
+          <div class="question">
+            <h1 class="awesome">CONTACT US</h1>
+            <hr class="awesome__line">
+            <h2 class="awesome1">Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
+          </div>
+
+
+          <div class="user__contact__data">
+            <div class="contact__data">
+              <form class="form__contact">
+                <div class="form__field__contact"><input type="text" placeholder="Name" class="input input:active">
+                </div>
+                <div class="form__field__contact"><input type="text" placeholder="Email" class="input"></div>
+                <div class="form__field__contact"><input type="text" placeholder="Password" class="input"></div>
+              </form>
+            </div>
+
+            <div class="message__data">
+              <form class="form__contact">
+                <div class="form__field__contact"><input type="text" placeholder="Message" class="input"></div>
+              </form>
+            </div>
+          </div>
+
+
+          <div class="send__message">
+            <div class="form__button">
+              <button class="btn__message btn--red btn--long">Send Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- footer -->
+
+    <div class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <nav class="nav">
+            <a class="social__icon" href="#">
+              <img src="img/free-icon-facebook-1077041.png" height="40px" width="40px" alt="">
+            </a>
+            <a class="social__icon" href="#">
+              <img src="img/free-icon-social-media-4335850.png" height="40px" width="40px" alt="">
+            </a>
+            <a class="social__icon" href="#">
+              <img src="img/free-icon-instagram-1077042.png" height="40px" width="40px" alt="">
+            </a>
+            <a class="social__icon" href="#">
+              <img src="img/free-icon-telegram-739260.png" height="40px" width="40px" alt="">
+            </a>
+            <a class="social__icon" href="#">
+              <img src="img/free-icon-whatsapp-1384023.png" height="40px" width="40px" alt="">
+            </a>
+          </nav>
+          <div class="social__title">
+            <h5 class="social__subtitle">© 2015 Axure Themes</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img  id="image"  src="/img/free-icon-facebook-1077041.png"  alt="The Beatles"   onclick="my_click();">
