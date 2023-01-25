@@ -33,7 +33,7 @@ p {
    width: 100%;
    max-width: 1600px;
    margin: 0 auto;
-
+   display: flex;
 }
 
 .container__intro {
@@ -372,20 +372,12 @@ cursor: pointer;
 
 
 .container__tabs {
-   padding: 0px 150px 0px;
    width: 100%;
    max-width: 100%;
-
    display: flex;
    align-items: center;
-
-
-
    justify-content: center;
-
-
    flex-wrap: wrap;
-
 }
 
 .tabs {
@@ -1038,8 +1030,9 @@ cursor: pointer;
 
 /* Slideshow container */
 .slideshow-container {
-   height: 450px;
-   width: 400px;
+   max-height: 450px;
+   width: auto;
+   max-width: 450px;
    margin: auto;
    align-items: center;
    display: flex;
@@ -1052,6 +1045,12 @@ cursor: pointer;
 .mySlides {
     width: 100%;
     display: flex;
+}
+
+.tab1 {
+   max-height: 450px;
+
+   max-width: 450px;
 }
 
 
