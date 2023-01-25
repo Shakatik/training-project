@@ -141,12 +141,13 @@
 
 
   <div class="tabs">
+    <div class="container">
     <div class="container__tabs">
       <div class="switch">
 
-        <button class="switch__tab1 btn--red active" onclick="currentSlide(1)">TAB 1</button>
-        <button class="switch__tab2 btn--red" onclick="currentSlide(2)">TAB 2</button>
-        <button class="switch__tab3 btn--red" onclick="currentSlide(3)">TAB 3</button>
+        <button class="switch__tab1 btn--red" id="switch__tab1" onclick="">TAB 1</button>
+        <button class="switch__tab2 btn--red" id="switch__tab2" onclick="">TAB 2</button>
+        <button class="switch__tab3 btn--red" id="switch__tab3" onclick="">TAB 3</button>
 
       </div>
 
@@ -164,23 +165,13 @@
       </div>
 
 
-
       <div class="slideshow-container">
         <div class="mySlides fade">
-          <img src="/img/tabs/image_left_sub_list_u260.png" style="width:100%" class="tab1">
+          <img src="" class="tab1" id="tab1">
         </div>
-        <div class="mySlides fade">
-          <img src="/img/reason/keyboard.png" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-          <img src="/img/reason/lightning.png" style="width:100%">
-        </div>
-
-        <!-- Next and previous buttons -->
-        <!-- <a class="prev" onclick="plusSlides(-1)"></a>
-      <a class="next" onclick="plusSlides(1)"></a> -->
       </div>
     </div>
+  </div>
   </div>
 
     <!-- Sub section -->
