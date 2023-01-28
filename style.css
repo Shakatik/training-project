@@ -381,7 +381,7 @@ cursor: pointer;
 }
 
 .tabs__inner{
-   display: block;
+   display: none;
 }
 
 
@@ -394,7 +394,6 @@ cursor: pointer;
    height: 750px;
    background-color: rgb(231, 231, 231);
    flex-wrap: wrap;
-
 
 }
 
@@ -1053,4 +1052,9 @@ cursor: pointer;
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+
+.active {
+background-color:#fdc11c;
 }
