@@ -380,6 +380,11 @@ cursor: pointer;
    flex-wrap: wrap;
 }
 
+.tabs__inner{
+   display: block;
+}
+
+
 .tabs {
 
    display: flex;
@@ -408,11 +413,11 @@ cursor: pointer;
    vertical-align: top;
    font-weight: 700;
    text-transform: uppercase;
-
+   
    transition: background .3s;
 }
 
-.switch__tab1 {
+.switch__tab {
    cursor: pointer;
    background-color: #333333;
    color: rgb(255, 255, 255);
@@ -425,32 +430,6 @@ cursor: pointer;
    margin: 1px;
 }
 
-.switch__tab2 {
-   cursor: pointer;
-   background-color: #333333;
-   color: rgb(255, 255, 255);
-   width: 110px;
-   height: 110px;
-   text-align: center;
-   border: none;
-   font-weight: 500;
-   font-size: 17px;
-   margin: 1px;
-}
-
-.switch__tab3 {
-   cursor: pointer;
-   background-color: #333333;
-   color: rgb(255, 255, 255);
-   width: 110px;
-   height: 110px;
-   text-align: center;
-   border: none;
-   font-weight: 500;
-   font-size: 17px;
-   margin: 1px;
-
-}
 
 .active, .switch__tab1:hover {
    background-color: #ff8b38;
@@ -567,6 +546,7 @@ cursor: pointer;
 
 
 .download__sky1 {
+   cursor: pointer;
    float: left;
    height: 100px;
    width: 100%;
