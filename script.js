@@ -1,28 +1,27 @@
 // let slideIndex = 1;
 // showSlides(slideIndex);
 
-
+const array = []
 // function currentSlide(n) {
 //   showSlides(slideIndex = n);
 // }
-
+// window.onload = function() {
 document.addEventListener('DOMContentLoaded', function () {
 const switch1 = document.getElementById('switch__tab1');
 const switch2 = document.getElementById('switch__tab2');
 const switch3 = document.getElementById('switch__tab3');
 // const title = document.querySelector("#tabs__title"); 
-
-
+const tabsin = document.getElementById('tabsin');
+document.querySelectorAll('switch__tab')
 switch1.addEventListener('click', () => { 
- title.textContent = "New text!";
 
-  const element = document.querySelector("tabs__title");
- element.innerHTML = "New Heading";
-  document.querySelector("#tab1").src = "/img/1646899356_3-kartinkin-net-p-pochemu-kartinki-3.png";
+tabsin.style.display = "none";
+// document.querySelector("tabs__inner").style.display == "none";
+  document.querySelector("#tab1").src = "/img/tabs/image_left_sub_list_u260.png";
 })
 
 switch2.addEventListener('click', () => { 
-
+  tabsin.style.display = "block";
   document.querySelector("#tab1").src = "/img/1587719791_1.jpg";
 })
 
@@ -33,7 +32,7 @@ switch3.addEventListener('click', () => {
 
 });
 
-
+// }
 
 
 
