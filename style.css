@@ -1058,3 +1058,7 @@ cursor: pointer;
 .active {
 background-color:#fdc11c;
 }
+
+.tab__active {
+   display: block;
+}
