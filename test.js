@@ -19,3 +19,6 @@ function foo (number, one, two, five) {
 }
 console.log(foo(6))
 
+let counter = 1;
+console.log( 2 * counter );
+counter++;
