@@ -2,23 +2,23 @@
 // 2 = гриба
 // 5 = грибов
 
-// foo(1) 
-number = 1
+// foo(1)
+const userName = prompt("who are you mf?", "");
 
-function foo (number, one, two, five) {
-    const n = number;
-    n %= 100;
-    if (n >= 1 && n<= 20) {
-        return five;
-    }
-    n %= 10;
-    if (n === 1) {
-        return one;
-    }
-    console.log(n)
+if (userName === "Admin") {
+
+    const pass = prompt("parol", "")
+
+    if (pass === "1234") {
+        alert("access denied")
+    } else if (pass === "" || pass == null) {
+        alert("cancel")
+    } else {
+    alert( 'Неверный пароль' );
+  }
+} else if(userName === "" || userName == null) {
+    alert("cancel")
+} else {
+    alert( "Я вас не знаю" );
 }
-console.log(foo(6))
 
-let counter = 1;
-console.log( 2 * counter );
-counter++;
