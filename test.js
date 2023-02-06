@@ -26,25 +26,28 @@
 // console.log(area)
 
 
-const grib = 10002;
 
-// function rahunok (name) {
+
+function rahunok (grib) {
 const gribs = "гриб";
 const gribnoy = grib % 10;
 const gribnoys = grib % 100;
 
+// grib ? gribnoy>=0 && gribnoy<=1 : 
+
+
+
     if (gribnoy>=0 && gribnoy<=1){
-        console.log(gribs+"")
+        return grib = 'гриб'
     }
-    if (gribnoy>=2 && gribnoy<=4){
-        console.log(gribs+"а")
+    else if (gribnoy>=2 && gribnoy<=4){
+        return grib = 'гриба'
     }
-    if (grib>=5 && grib<=20 || grib === 11){
-        console.log(gribs+"ов")
+    else if (gribnoy>=5 && gribnoy<=20 || grib === 11){
+        return grib = 'грибов'
     }
-
-
-
+}
+ console.log(rahunok(106))
 
     // function getNoun(gribov) {
     //     const grib = 1;
@@ -70,3 +73,16 @@ const gribnoys = grib % 100;
     //   }
 
     //   console.log(gribov)
+
+
+
+
+    function countBy(x, n) {
+        let z = [1,2,3,4,5,6,7,8,9,10];
+        let a = z.slice(0, n);
+        let res = a.filter(elem => elem % x == 0);
+        
+        return res;
+      }
+
+      console.log(countBy(2, 5))
