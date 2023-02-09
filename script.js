@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
 // }D
 
 // function showSlides(n) {
