@@ -88,9 +88,24 @@ const boxEnd = {
 
 
 
+// export function CallFunc (search, x) {
+//   search =  ProcessKey[];
+// }
 
 
+function calles (ProcessKey) {
+  ProcessKey.map((item) => id = {} )
+  console.log("дата:", ProcessKey)
+}
 
+const ProcessKey = {
+  FUNC1: getGribCorrectEnding(),
+  FUNC2: getParity(),
+  FUNC3: getBoxQuantity (),
+}
+
+
+calles()
 
 
 
