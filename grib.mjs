@@ -1,4 +1,4 @@
-export function getGribCorrectEnding(x) {
+function getGribCorrectEnding(x) {
   const key = getCorrectEnding(x);
   const res = ara[key];
   return res
@@ -30,7 +30,7 @@ const ara = {
 
 
 
-export function getParity(x) {
+ function getParity(x) {
   const key =  getCount(x);
   const res = Endings[key]
   return res
@@ -50,7 +50,7 @@ const Endings = {
 
 
 
-export function getBoxQuantity (x) {
+ function getBoxQuantity (x) {
   const key = getBoxType (x);
   const res = boxEnd[key];
   return res
@@ -88,24 +88,21 @@ const boxEnd = {
 
 
 
-// export function CallFunc (search, x) {
-//   search =  ProcessKey[];
-// }
-
-
-function calles (ProcessKey) {
-  ProcessKey.map((item) => id = {} )
-  console.log("дата:", ProcessKey)
+export function CallFunc (key, x) {
+  const fun = ProcessKey[key];
+  const res = fun(x); 
+  return res
 }
+
 
 const ProcessKey = {
-  FUNC1: getGribCorrectEnding(),
-  FUNC2: getParity(),
-  FUNC3: getBoxQuantity (),
+  FUNC1: getGribCorrectEnding,
+  FUNC2: getParity,
+  FUNC3: getBoxQuantity,
 }
 
 
-calles()
+
 
 
 
