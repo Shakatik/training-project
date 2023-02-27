@@ -29,20 +29,6 @@ const GRIB_KEY_COLLECTION = {
   END_3: "грибов",
 };
 
-export function getParity(x) {
-  const key = getCount(x);
-  const res = Endings[key];
-  return res;
-}
-
-export function getCount(x) {
-  return x % 2 == 0 ? "END1" : "END2";
-}
-
-const Endings = {
-  END1: "четное",
-  END2: "нечетное",
-};
 
 export function CallFunc(key, x) {
   const fun = ProcessKey[key];
