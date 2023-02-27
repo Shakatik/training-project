@@ -1,6 +1,6 @@
-import { getParity, getGribCorrectEnding } from "./grib.mjs";
+import { getGribCorrectEnding } from "./grib.mjs";
 import { getBoxQuantity } from "./boxes.mjs";
-
+import { getParity } from "./parity.mjs";
 const ProcessKey = {
   FUNC1: getGribCorrectEnding,
   FUNC2: getParity,
