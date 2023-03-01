@@ -41,10 +41,6 @@ button.addEventListener("click", function Calculation() {
   const elem = ProcessKey[select];
   const res = input + ": " + elem(input);
   addItem(res);
-  // const newEl = array.push(`${res}`);
 
-  // p.textContent = `${addArray}`;
-  // document.body.appendChild(p);
-  // console.log(addArray);
 });
-// .
+
