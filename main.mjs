@@ -13,6 +13,9 @@ const button = document.getElementById("grib__button");
 // localStorage.setItem("array", JSON.stringify(array));
 
 const addArray = JSON.parse(localStorage.getItem("array"));
+const deleteButton = document.createElement("button")
+deleteButton.appendChild(document.createTextNode("X"));
+
 
 render();
 function render() {
@@ -23,9 +26,10 @@ function render() {
   });
 
   addArray.forEach((element) => {
-    const p = document.createElement("p");
-    p.textContent = `${element}`;
-    document.body.appendChild(p);
+    const li = document.createElement("li");
+    li.textContent = `${element}`;
+    document.body.appendChild(li);
+    document.body.appendChild(deleteButton)
   });
 }
 
@@ -41,6 +45,10 @@ button.addEventListener("click", function Calculation() {
   const elem = ProcessKey[select];
   const res = input + ": " + elem(input);
   addItem(res);
-
 });
 
+deleteButton.addEventListener("click", function removeItem() {
+  const pe = document.querySelector("p")
+  pe.remove
+
+})
