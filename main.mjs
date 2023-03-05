@@ -14,7 +14,7 @@ const button = document.getElementById("grib__button");
 
 const addArray = JSON.parse(localStorage.getItem("array"));
 const deleteButton = document.createElement("button")
-deleteButton.appendChild(document.createTextNode("X"));
+deleteButton.appendChild(document.createTextNode("Delete"));
 
 
 render();
@@ -47,8 +47,7 @@ button.addEventListener("click", function Calculation() {
   addItem(res);
 });
 
-deleteButton.addEventListener("click", function removeItem() {
-  const pe = document.querySelector("p")
-  pe.remove
+deleteButton.addEventListener("click", function removeItem(item) {
+  item.remove
 
 })
