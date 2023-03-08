@@ -13,23 +13,34 @@ const button = document.getElementById("grib__button");
 // localStorage.setItem("array", JSON.stringify(array));
 
 const addArray = JSON.parse(localStorage.getItem("array"));
-const deleteButton = document.createElement("button")
+const deleteButton = document.createElement("button");
 deleteButton.appendChild(document.createTextNode("Delete"));
-
+const taskList = document.querySelector(".taskslist");
+console.log(taskList);
 
 render();
 function render() {
-  const neP = document.querySelectorAll("p");
+  const neP = document.querySelectorAll("li");
   console.log(neP);
   neP.forEach((item) => {
     item.remove();
   });
 
   addArray.forEach((element) => {
-    const li = document.createElement("li");
-    li.textContent = `${element}`;
-    document.body.appendChild(li);
-    document.body.appendChild(deleteButton)
+    // const li = document.createElement("li");
+    // li.textContent = `${element}`;
+    // document.body.appendChild(li);
+    // document.body.appendChild(deleteButton)
+
+    const htmlAdd = 
+    `<li>
+    <p>${element}</p>
+    <div>
+    <button class="deleteButton">X</button>
+    </div>
+  </li>`;
+
+    taskList.insertAdjacentHTML("afterend", htmlAdd);
   });
 }
 
@@ -48,6 +59,6 @@ button.addEventListener("click", function Calculation() {
 });
 
 deleteButton.addEventListener("click", function removeItem(item) {
-  item.remove
-
-})
+  
+  item.remove;
+});
