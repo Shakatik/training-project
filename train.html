@@ -12,16 +12,32 @@
     <title>Project1</title>
   </head>
   <body style="background-color: rgb(171, 165, 238)">
-    <input id="input1" type="text">
+    <input id="input1" type="text" />
     <button id="grib__button" class="btn__download btn--red" type="button">
       calculate
     </button>
-    <select id="select" name="get__type" size="1" required="required" autofocus="active">
+    <select
+      id="select"
+      name="get__type"
+      size="1"
+      required="required"
+      autofocus="active"
+    >
       <option value="">Выберите значение</option>
       <option value="FUNC1">Грибы</option>
       <option value="FUNC2">Четность</option>
       <option value="FUNC3">Коробки</option>
     </select>
+    <div>
+      <div class="taskslist">
+        <li>
+          <p></p>
+          <div>
+            <button class="deleteButton"></button>
+          </div>
+        </li>
+      </div>
+    </div>
   </body>
 
   <script type="module" src="/main.mjs"></script>
