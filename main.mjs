@@ -13,8 +13,6 @@ const button = document.getElementById("grib__button");
 // localStorage.setItem("array", JSON.stringify(array));
 
 const addArray = JSON.parse(localStorage.getItem("array"));
-const deleteButton = document.createElement("button");
-deleteButton.appendChild(document.createTextNode("Delete"));
 const taskList = document.querySelector(".taskslist");
 console.log(taskList);
 
@@ -25,22 +23,32 @@ function render() {
   neP.forEach((item) => {
     item.remove();
   });
-
+  console.log(addArray);
   addArray.forEach((element) => {
-    // const li = document.createElement("li");
-    // li.textContent = `${element}`;
-    // document.body.appendChild(li);
-    // document.body.appendChild(deleteButton)
+    const li = document.createElement("li");
+    const div = document.createElement("div");
+    const deleteButton = document.createElement("button");
+    deleteButton.appendChild(document.createTextNode("Delete"));
+    div.appendChild(deleteButton) 
+    li.textContent = `${element}`;
+    li.append(div)
+    deleteButton.addEventListener("click", function removeItem(item) {
+      const parent = deleteButton.closest('li');
+      console.log(parent);
+      parent.remove();
+    });
+    document.body.appendChild(li);
 
-    const htmlAdd = 
-    `<li>
-    <p>${element}</p>
-    <div>
-    <button class="deleteButton">X</button>
-    </div>
-  </li>`;
 
-    taskList.insertAdjacentHTML("afterend", htmlAdd);
+  //   const htmlAdd = 
+  //   `<li>
+  //   <p>${element}</p>
+  //   <div>
+  //   <button class="deleteButton">X</button>
+  //   </div>
+  // </li>`;
+
+    // taskList.insertAdjacentHTML("afterend", htmlAdd);
   });
 }
 
@@ -58,7 +66,4 @@ button.addEventListener("click", function Calculation() {
   addItem(res);
 });
 
-deleteButton.addEventListener("click", function removeItem(item) {
-  
-  item.remove;
-});
+
