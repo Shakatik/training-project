@@ -53,19 +53,19 @@ function addItem(newItem) {
   localStorage.setItem("array", JSON.stringify(addArray));
 }
 
-button.addEventListener("click", function Calculation() {
-  const select = document.getElementById("select").value;
-  const input = document.getElementById("input1").value;
-  const elem = ProcessKey[select];
-  const res = input + ": " + elem(input);
-  const myObject = {
-    id: objectCounter++,
-    value: res,
-    type: select,
-  };
-  addItem(myObject);
-});
-
+// button.addEventListener("click", function Calculation() {
+//   const select = document.getElementById("select").value;
+//   const input = document.getElementById("input1").value;
+//   const elem = ProcessKey[select];
+//   const res = input + ": " + elem(input);
+//   const myObject = {
+//     id: objectCounter++,
+//     value: res,
+//     type: select,
+//   };
+//   addItem(myObject);
+// });
+// console.log(addArray);
 // let array = [
 
 // ];
