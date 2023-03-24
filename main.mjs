@@ -12,8 +12,8 @@ const button = document.getElementById("grib__button");
 let array = [
 
 ];
-localStorage.setItem("array", JSON.stringify(array));
-const addArray = JSON.parse(localStorage.getItem("array"));
+// localStorage.setItem("array", JSON.stringify(array));
+let addArray = JSON.parse(localStorage.getItem("array"));
 let objectCounter = 0;
 
 
@@ -23,7 +23,7 @@ function render() {
   div.forEach((item) => {
     item.remove();
   });
-  console.log(addArray);
+
 
   addArray.forEach((element) => {
     const deleteButton = document.createElement("button");
@@ -33,17 +33,18 @@ function render() {
     li.id = "object" + objectCounter;
     li.textContent = element.value
     div.append(li, deleteButton);
-
+ 
 
 
 
     deleteButton.addEventListener("click", function removeItem() {
-      const newArray = addArray.filter(item => item.id !== element.id);
-      addArray.splice(addArray.indexOf(element), 1);
+      addArray = addArray.filter(item => item.id !== element.id);
+      // addArray.splice(addArray.indexOf(element), 1);
       render();
-      localStorage.setItem("array", JSON.stringify(newArray));
+      localStorage.setItem("array", JSON.stringify(addArray));
     });
     document.body.appendChild(div);
+
   });
 }
 
@@ -51,21 +52,23 @@ function addItem(newItem) {
   addArray.push(newItem);
   render();
   localStorage.setItem("array", JSON.stringify(addArray));
+  
 }
 
-// button.addEventListener("click", function Calculation() {
-//   const select = document.getElementById("select").value;
-//   const input = document.getElementById("input1").value;
-//   const elem = ProcessKey[select];
-//   const res = input + ": " + elem(input);
-//   const myObject = {
-//     id: objectCounter++,
-//     value: res,
-//     type: select,
-//   };
-//   addItem(myObject);
-// });
-// console.log(addArray);
+button.addEventListener("click", function Calculation() {
+  const select = document.getElementById("select").value;
+  const input = document.getElementById("input1").value;
+  const elem = ProcessKey[select];
+  const res = input + ": " + elem(input);
+  const myObject = {
+    id: objectCounter++,
+    value: res,
+    type: select,
+  };
+  addItem(myObject);
+});
+console.log(addArray);
+console.log(array);
 // let array = [
 
 // ];
