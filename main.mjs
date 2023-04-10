@@ -7,15 +7,19 @@ const ProcessKey = {
   FUNC3: getBoxQuantity,
 };
 
-const button = document.getElementById("grib__button");
+const maneButton = document.getElementById("mane__button");
+const gribButton = document.getElementById("grib__button");
+const parityButton = document.getElementById("parity__button");
+const boxButton = document.getElementById("box__button");
+const AllButton = document.getElementById("all__button");
 
-let array = [
+const taskList = document.getElementById("task__list");
 
-];
+let array = [];
+
 // localStorage.setItem("array", JSON.stringify(array));
 let addArray = JSON.parse(localStorage.getItem("array"));
-let objectCounter = 0;
-
+let objectCounter = parseInt(localStorage.getItem("objectCounter")) || objectCounter === 0;
 
 render();
 function render() {
@@ -23,39 +27,40 @@ function render() {
   div.forEach((item) => {
     item.remove();
   });
-
-
+  console.log(addArray);
   addArray.forEach((element) => {
     const deleteButton = document.createElement("button");
     deleteButton.appendChild(document.createTextNode("Delete"));
     const div = document.createElement("div");
     const li = document.createElement("li");
     li.id = "object" + objectCounter;
-    li.textContent = element.value
+    li.textContent = element.value;
     div.append(li, deleteButton);
- 
-
-
 
     deleteButton.addEventListener("click", function removeItem() {
-      addArray = addArray.filter(item => item.id !== element.id);
+      addArray = addArray.filter((item) => item.id !== element.id);
       // addArray.splice(addArray.indexOf(element), 1);
       render();
       localStorage.setItem("array", JSON.stringify(addArray));
     });
     document.body.appendChild(div);
-
   });
 }
+
+
+
+
+
+
 
 function addItem(newItem) {
   addArray.push(newItem);
   render();
   localStorage.setItem("array", JSON.stringify(addArray));
-  
+  localStorage.setItem("objectCounter", objectCounter + 1);
 }
 
-button.addEventListener("click", function Calculation() {
+maneButton.addEventListener("click", function Calculation() {
   const select = document.getElementById("select").value;
   const input = document.getElementById("input1").value;
   const elem = ProcessKey[select];
@@ -67,46 +72,28 @@ button.addEventListener("click", function Calculation() {
   };
   addItem(myObject);
 });
-console.log(addArray);
-console.log(array);
-// let array = [
-
-// ];
-// localStorage.setItem("array", JSON.stringify(array));
-
-// let objectCounter = 0;
-// button.addEventListener("click", function Calculation() {
-//   const select = document.getElementById("select").value;
-//   const input = document.getElementById("input1").value;
-//   const elem = ProcessKey[select];
-//   const res = input + ": " + elem(input);
-//   const li = document.createElement("li");
-//   li.textContent = res;
-//   li.id = "object" + objectCounter;
-//   document.body.appendChild(li);
-
-//   const myObject = {
-//     Id: objectCounter++,
-//     value: input,
-//     type: select,
-//   };
-//   console.log(myObject);
-//   console.log(array)
-//   array.push(myObject)
-//   localStorage.setItem("array", JSON.stringify(myObject));
-// });
 
 
+function hideItem(type) {
+  addArray = addArray.filter((item) => item.type == type)
+  // console.log(addArray)
+}
 
+gribButton.addEventListener("click", function gribHide () {
+  hideItem('FUNC1');
+  render();
+})
 
+parityButton.addEventListener("click", function gribHide () {
+  hideItem('FUNC2');
+  render();
+})
 
+boxButton.addEventListener("click", function gribHide () {
+  hideItem('FUNC3');
+  render();
+})
 
-//       const parent = deleteButton.closest("li");
-//       sole.log(index);
-// const index = addArray.indexOf(parent.textContent, 0);
-//       con
-//       if (index == -1) {
-//         addArray.splice(index, 1);
-//       }
-//       console.log(parent);
-//       parent.remove();
+AllButton.addEventListener("click", function gribHide () {
+  render();
+})
