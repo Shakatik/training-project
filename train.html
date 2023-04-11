@@ -13,30 +13,34 @@
   </head>
   <body style="background-color: rgb(171, 165, 238)">
     <input id="input1" type="text" />
-    <button id="mane__button" class="btn__download btn--red" type="button">
+    <button id="mane__button" class="btn" type="button">
       calculate
     </button>
-    <button id="grib__button" class="btn__download btn--red" type="button">
+    <button id="grib__button" class="btn__filter" type="button" data-type="FUNC1">
       Only mushroom
     </button>
-    <button id="parity__button" class="btn__download btn--red" type="button">
+    <button id="parity__button" class="btn__filter" type="button" data-type="FUNC2">
       Only Parity
     </button>
-    <button id="box__button" class="btn__download btn--red" type="button">
+    <button id="box__button" class="btn__filter" type="button" data-type="FUNC3">
       Only boxes
     </button>
-    <button id="all__button" class="btn__download btn--red" type="button">
+    <button id="all__button" class="btn__filter" type="button" data-type="all">
       All things
     </button>
-    <select id="select" name="get__type" size="1" required="required" autofocus="active">
+    <select
+      id="select"
+      name="get__type"
+      size="1"
+      required="required"
+      autofocus="active"
+    >
       <option value="">Выберите значение</option>
       <option value="FUNC1">Грибы</option>
       <option value="FUNC2">Четность</option>
       <option value="FUNC3">Коробки</option>
     </select>
-    <div class="task__list">
-      
-    </div>
+    <div class="task__list"></div>
   </body>
 
   <script type="module" src="/main.mjs"></script>
