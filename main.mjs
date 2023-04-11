@@ -11,7 +11,12 @@ const maneButton = document.getElementById("mane__button");
 const gribButton = document.getElementById("grib__button");
 const parityButton = document.getElementById("parity__button");
 const boxButton = document.getElementById("box__button");
-const AllButton = document.getElementById("all__button");
+const allButton = document.getElementById("all__button");
+
+// const filterButtons = [document.getElementsByClassName("btn__filter")]
+const filterButtons = document.querySelectorAll(".btn__filter");
+
+console.log(filterButtons);
 
 const taskList = document.getElementById("task__list");
 
@@ -19,7 +24,8 @@ let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
 let addArray = JSON.parse(localStorage.getItem("array"));
-let objectCounter = parseInt(localStorage.getItem("objectCounter")) || objectCounter === 0;
+let objectCounter =
+  parseInt(localStorage.getItem("objectCounter")) || objectCounter === 0;
 
 render();
 function render() {
@@ -47,12 +53,6 @@ function render() {
   });
 }
 
-
-
-
-
-
-
 function addItem(newItem) {
   addArray.push(newItem);
   render();
@@ -73,27 +73,25 @@ maneButton.addEventListener("click", function Calculation() {
   addItem(myObject);
 });
 
-
-function hideItem(type) {
-  addArray = addArray.filter((item) => item.type == type)
-  // console.log(addArray)
+function displayItems(event) {
+  let type = event.target.dataset.type;
+  addArray = JSON.parse(localStorage.getItem("array"));
+  switch (type) {
+    case "FUNC1":
+      addArray = addArray.filter((item) => item.type === type);
+      break;
+    case "FUNC2":
+      addArray = addArray.filter((item) => item.type === type);
+      break;
+    case "FUNC3":
+      addArray = addArray.filter((item) => item.type === type);
+      break;
+    default:
+      break;
+  }
+  render();
 }
 
-gribButton.addEventListener("click", function gribHide () {
-  hideItem('FUNC1');
-  render();
-})
-
-parityButton.addEventListener("click", function gribHide () {
-  hideItem('FUNC2');
-  render();
-})
-
-boxButton.addEventListener("click", function gribHide () {
-  hideItem('FUNC3');
-  render();
-})
-
-AllButton.addEventListener("click", function gribHide () {
-  render();
-})
+filterButtons.forEach((button) =>
+  button.addEventListener("click", displayItems)
+);
