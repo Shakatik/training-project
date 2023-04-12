@@ -8,33 +8,28 @@ const ProcessKey = {
 };
 
 const maneButton = document.getElementById("mane__button");
-const gribButton = document.getElementById("grib__button");
-const parityButton = document.getElementById("parity__button");
-const boxButton = document.getElementById("box__button");
-const allButton = document.getElementById("all__button");
 
-// const filterButtons = [document.getElementsByClassName("btn__filter")]
 const filterButtons = document.querySelectorAll(".btn__filter");
 
 console.log(filterButtons);
 
-const taskList = document.getElementById("task__list");
-
 let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
-let addArray = JSON.parse(localStorage.getItem("array"));
-let objectCounter =
-  parseInt(localStorage.getItem("objectCounter")) || objectCounter === 0;
+let initialData = JSON.parse(localStorage.getItem("array"));
+let renderData = [...initialData];
+let filterType;
+let objectCounter = parseInt(localStorage.getItem("objectCounter")) || objectCounter === 0;
 
 render();
+// только рендерит массив
 function render() {
   const div = document.querySelectorAll("div");
   div.forEach((item) => {
     item.remove();
   });
-  console.log(addArray);
-  addArray.forEach((element) => {
+  console.log(initialData);
+  renderData.forEach((element) => {
     const deleteButton = document.createElement("button");
     deleteButton.appendChild(document.createTextNode("Delete"));
     const div = document.createElement("div");
@@ -44,21 +39,27 @@ function render() {
     div.append(li, deleteButton);
 
     deleteButton.addEventListener("click", function removeItem() {
-      addArray = addArray.filter((item) => item.id !== element.id);
-      // addArray.splice(addArray.indexOf(element), 1);
+      initialData = initialData.filter((item) => item.id !== element.id);
+      filterItems(filterType);
       render();
-      localStorage.setItem("array", JSON.stringify(addArray));
+      localStorage.setItem("array", JSON.stringify(initialData));
     });
     document.body.appendChild(div);
   });
 }
 
 function addItem(newItem) {
-  addArray.push(newItem);
+  initialData.push(newItem);
+  filterItems(filterType);
   render();
-  localStorage.setItem("array", JSON.stringify(addArray));
+  localStorage.setItem("array", JSON.stringify(initialData));
   localStorage.setItem("objectCounter", objectCounter + 1);
 }
+
+// только создает новій елемент
+
+// Только обробатівает нажатие
+// создает елмент, фильтрует, рендерит
 
 maneButton.addEventListener("click", function Calculation() {
   const select = document.getElementById("select").value;
@@ -73,25 +74,33 @@ maneButton.addEventListener("click", function Calculation() {
   addItem(myObject);
 });
 
-function displayItems(event) {
-  let type = event.target.dataset.type;
-  addArray = JSON.parse(localStorage.getItem("array"));
+// Только фильтрует массив
+function filterItems(type) {
+  console.log(filterType);
+  filterType = type;
   switch (type) {
     case "FUNC1":
-      addArray = addArray.filter((item) => item.type === type);
+      renderData = initialData.filter((item) => item.type === type);
       break;
     case "FUNC2":
-      addArray = addArray.filter((item) => item.type === type);
+      renderData = initialData.filter((item) => item.type === type);
       break;
     case "FUNC3":
-      addArray = addArray.filter((item) => item.type === type);
+      renderData = initialData.filter((item) => item.type === type);
       break;
-    default:
+    case "all":
+      renderData = initialData;
       break;
   }
   render();
 }
 
+// Только обробатівает нажатие
+const onFilterClick = (event) => filterItems(event.target.dataset.type);
+// function filterItems(event) {
+//   let type = event.target.dataset.type;
+// }
+
 filterButtons.forEach((button) =>
-  button.addEventListener("click", displayItems)
+  button.addEventListener("click", onFilterClick)
 );
