@@ -8,8 +8,9 @@ const ProcessKey = {
 };
 
 const maneButton = document.getElementById("mane__button");
-
+const countButton = document.getElementById("count__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
+const countInput = document.getElementById("input2");
 
 
 
@@ -39,8 +40,8 @@ function render() {
 
     deleteButton.addEventListener("click", function removeItem() {
       initialData = initialData.filter((item) => item.id !== element.id);
-      renderData = initialData;
-      filterItems(filterType);
+      renderData = [...initialData];
+      filterItemsByType(filterType);
       render();
       localStorage.setItem("array", JSON.stringify(initialData));
     });
@@ -49,17 +50,18 @@ function render() {
   console.log(initialData);
 }
 
+
+// только создает новій елемент
 function addItem(newItem) {
   initialData.push(newItem);
-  filterItems(filterType);
-  renderData = initialData;
+  filterItemsByType(filterType);
+  renderData = [...initialData];
   render();
   localStorage.setItem("array", JSON.stringify(initialData));
   localStorage.setItem("objectCounter", objectCounter + 1);
 
 }
 
-// только создает новій елемент
 
 // Только обробатівает нажатие
 // создает елмент, фильтрует, рендерит
@@ -73,41 +75,45 @@ maneButton.addEventListener("click", function Calculation() {
     id: objectCounter++,
     value: res,
     type: select,
+    valueNum: +input,
   };
   addItem(myObject);
   // render();
 });
 
 // Только фильтрует массив
-function filterItems(type) {
+function filterByNumber(num) {
+  console.log(num);
+  return initialData.filter((item) => item.value.includes(num));
+}
+
+function filterItemsByType(type, num) {
   console.log(filterType);
   filterType = type;
-  switch (type) {
-    case "FUNC1":
-      renderData = initialData.filter((item) => item.type === type);
-      break;
-    case "FUNC2":
-      renderData = initialData.filter((item) => item.type === type);
-      break;
-    case "FUNC3":
-      renderData = initialData.filter((item) => item.type === type);
-      break;
-    // case "FUNC4":
-    //   renderData = initialData.filter((item) => item.value === type);
-    //   break;
-    case "all":
-      renderData = initialData;
-      break;
+  if (type === "FUNC1") {
+    renderData = initialData.filter((item) => item.type === type);
+  } else if (type === "FUNC2") {
+    renderData = initialData.filter((item) => item.type === type);
+  } else if (type === "FUNC3") {
+    renderData = initialData.filter((item) => item.type === type);
+  } else if (type === "FUNC4") {
+    renderData = filterByNumber(num);
+  } else if (type === "all") {
+    renderData = initialData;
   }
   render();
 }
+countButton.addEventListener('click', function() {
+  const num = (countInput.value);
+  filterItemsByType("FUNC4", num)
+})
+
 
 // Только обробатівает нажатие
-const onFilterClick = (event) => filterItems(event.target.dataset.type);
-// function filterItems(event) {
-//   let type = event.target.dataset.type;
-// }
+const onFilterClick = (event) => filterItemsByType(event.target.dataset.type);
 
+
+// Только вешает обработчик на кнопки
 filterButtons.forEach((button) =>
   button.addEventListener("click", onFilterClick)
 );
