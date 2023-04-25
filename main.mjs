@@ -8,7 +8,6 @@ const ProcessKey = {
 };
 
 const maneButton = document.getElementById("mane__button");
-const countButton = document.getElementById("count__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
 const countInput = document.getElementById("input2");
 
@@ -103,9 +102,11 @@ function filterItemsByType(type, num) {
   }
   render();
 }
-countButton.addEventListener('click', function() {
-  const num = (countInput.value);
-  filterItemsByType("FUNC4", num)
+
+// Поиск по введению в инпут
+countInput.addEventListener('input', function() {
+  // const num = (countInput.value);
+  filterItemsByType("FUNC4", countInput.value)
 })
 
 
