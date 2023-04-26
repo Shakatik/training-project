@@ -1,6 +1,7 @@
 import { getGribCorrectEnding } from "./grib.mjs";
 import { getBoxQuantity } from "./boxes.mjs";
 import { getParity } from "./parity.mjs";
+// rename FUNC1 ...
 const ProcessKey = {
   FUNC1: getGribCorrectEnding,
   FUNC2: getParity,
@@ -10,15 +11,17 @@ const ProcessKey = {
 const maneButton = document.getElementById("mane__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
 const countInput = document.getElementById("input2");
-
+// remove
 let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
 const initialData = JSON.parse(localStorage.getItem("array"));
+//пофиксать ошибку когда 0 элементов
 let renderData = [...initialData];
-let filterType;
-let objectCounter = parseInt(localStorage.getItem("objectCounter")) || objectCounter === 0;
-
+let filterType = localStorage.getItem("filter-type");
+// заменить обжекткоунт на время создания
+let objectCounter = parseInt(localStorage.getItem("objectCounter"));
+filterItemsByType(filterType);
 render();
 // только рендерит массив
 function render() {
@@ -49,9 +52,11 @@ function render() {
 // только создает новій елемент
 function addItem(newItem) {
   initialData.push(newItem);
+  //fix showing all items after adding new
   renderData = [...initialData];
   render();
   localStorage.setItem("array", JSON.stringify(initialData));
+  //remove
   localStorage.setItem("objectCounter", objectCounter + 1);
 }
 
@@ -59,11 +64,10 @@ function addItem(newItem) {
 function filterItemsByType(Type) {
   filterType = Type;
   localStorage.setItem("filter-type", filterType);
-  const savedFilter = localStorage.getItem("filter-type");
-  renderData = savedFilter !== "all" ? initialData.filter((item) => item.type === savedFilter) : initialData;
-  console.log(renderData);
+  // localStorage.getItem("filter-type");
+  renderData = filterType !== "all" ? initialData.filter((item) => item.type === filterType) : initialData;
 
-  console.log(savedFilter);
+  console.log(renderData);
   console.log(filterType);
   render();
 }
@@ -73,25 +77,33 @@ function filterItemsByType(Type) {
 countInput.addEventListener("input", function () {
   const num = countInput.value;
   renderData = renderData.filter((item) => item.value.includes(num));
-  console.log(savedFilter);
+  // console.log(savedFilter);
 
- 
+  // fix
+  if (countInput.value === "" ) {
+    filterItemsByType(savedFilter)
+  }
   console.log(num);
   render();
 });
 
-countInput.addEventListener('change', function () {
-  if (countInput.value == "" ) {
-    filterItemsByType(savedFilter)
-  }
-})
+// countInput.addEventListener('input', function () {
+//   console.log('++');
+//   if (countInput.value == "1" ) {
+//     filterItemsByType()
+
+//   }
+// })
 
 // создает елмент, фильтрует, рендерит
 maneButton.addEventListener("click", function Calculation() {
   const select = document.getElementById("select").value;
   const input = document.getElementById("input1").value;
+  //rename
   const elem = ProcessKey[select];
   const res = input + ": " + elem(input);
+
+  // rename
   const myObject = {
     id: objectCounter++,
     value: res,
@@ -109,3 +121,4 @@ const onFilterClick = (event) => filterItemsByType(event.target.dataset.type);
 filterButtons.forEach((button) =>
   button.addEventListener("click", onFilterClick)
 );
+// поменять селект на радиобуттон с дефолтным значением
