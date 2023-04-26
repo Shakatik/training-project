@@ -11,12 +11,10 @@ const maneButton = document.getElementById("mane__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
 const countInput = document.getElementById("input2");
 
-
-
 let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
-let initialData = JSON.parse(localStorage.getItem("array"));
+const initialData = JSON.parse(localStorage.getItem("array"));
 let renderData = [...initialData];
 let filterType;
 let objectCounter = parseInt(localStorage.getItem("objectCounter")) || objectCounter === 0;
@@ -40,7 +38,6 @@ function render() {
     deleteButton.addEventListener("click", function removeItem() {
       initialData = initialData.filter((item) => item.id !== element.id);
       renderData = [...initialData];
-      filterItemsByType(filterType);
       render();
       localStorage.setItem("array", JSON.stringify(initialData));
     });
@@ -49,22 +46,47 @@ function render() {
   console.log(initialData);
 }
 
-
 // только создает новій елемент
 function addItem(newItem) {
   initialData.push(newItem);
-  filterItemsByType(filterType);
   renderData = [...initialData];
   render();
   localStorage.setItem("array", JSON.stringify(initialData));
   localStorage.setItem("objectCounter", objectCounter + 1);
+}
 
+// Только фильтрует массив
+function filterItemsByType(Type) {
+  filterType = Type;
+  localStorage.setItem("filter-type", filterType);
+  const savedFilter = localStorage.getItem("filter-type");
+  renderData = savedFilter !== "all" ? initialData.filter((item) => item.type === savedFilter) : initialData;
+  console.log(renderData);
+
+  console.log(savedFilter);
+  console.log(filterType);
+  render();
 }
 
 
-// Только обробатівает нажатие
-// создает елмент, фильтрует, рендерит
+// Фильтр и поиск по введению в инпут
+countInput.addEventListener("input", function () {
+  const num = countInput.value;
+  renderData = renderData.filter((item) => item.value.includes(num));
+  console.log(savedFilter);
 
+ 
+  console.log(num);
+  render();
+});
+
+countInput.addEventListener('change', function () {
+  if (countInput.value == "" ) {
+    filterItemsByType(savedFilter)
+  }
+})
+
+// создает елмент, фильтрует, рендерит
 maneButton.addEventListener("click", function Calculation() {
   const select = document.getElementById("select").value;
   const input = document.getElementById("input1").value;
@@ -77,42 +99,11 @@ maneButton.addEventListener("click", function Calculation() {
     valueNum: +input,
   };
   addItem(myObject);
-  // render();
 });
-
-// Только фильтрует массив
-function filterByNumber(num) {
-  console.log(num);
-  return initialData.filter((item) => item.value.includes(num));
-}
-
-function filterItemsByType(type, num) {
-  console.log(filterType);
-  filterType = type;
-  if (type === "FUNC1") {
-    renderData = initialData.filter((item) => item.type === type);
-  } else if (type === "FUNC2") {
-    renderData = initialData.filter((item) => item.type === type);
-  } else if (type === "FUNC3") {
-    renderData = initialData.filter((item) => item.type === type);
-  } else if (type === "FUNC4") {
-    renderData = filterByNumber(num);
-  } else if (type === "all") {
-    renderData = initialData;
-  }
-  render();
-}
-
-// Поиск по введению в инпут
-countInput.addEventListener('input', function() {
-  // const num = (countInput.value);
-  filterItemsByType("FUNC4", countInput.value)
-})
 
 
 // Только обробатівает нажатие
 const onFilterClick = (event) => filterItemsByType(event.target.dataset.type);
-
 
 // Только вешает обработчик на кнопки
 filterButtons.forEach((button) =>
