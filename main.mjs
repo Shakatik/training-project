@@ -15,12 +15,12 @@ const countInput = document.getElementById("input2");
 let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
-const initialData = JSON.parse(localStorage.getItem("array"));
+let initialData = JSON.parse(localStorage.getItem("array"));
 //пофиксать ошибку когда 0 элементов
 let renderData = [...initialData];
 let filterType = localStorage.getItem("filter-type");
 // заменить обжекткоунт на время создания
-let objectCounter = parseInt(localStorage.getItem("objectCounter"));
+let objectCounter = parseInt(localStorage.getItem("objectCounter")) || null;
 filterItemsByType(filterType);
 render();
 // только рендерит массив
@@ -52,8 +52,8 @@ function render() {
 // только создает новій елемент
 function addItem(newItem) {
   initialData.push(newItem);
-  //fix showing all items after adding new
   renderData = [...initialData];
+  filterItemsByType(filterType)
   render();
   localStorage.setItem("array", JSON.stringify(initialData));
   //remove
@@ -64,24 +64,22 @@ function addItem(newItem) {
 function filterItemsByType(Type) {
   filterType = Type;
   localStorage.setItem("filter-type", filterType);
-  // localStorage.getItem("filter-type");
-  renderData = filterType !== "all" ? initialData.filter((item) => item.type === filterType) : initialData;
+  renderData =
+    filterType !== "all"
+      ? initialData.filter((item) => item.type === filterType)
+      : initialData;
 
-  console.log(renderData);
   console.log(filterType);
   render();
 }
-
 
 // Фильтр и поиск по введению в инпут
 countInput.addEventListener("input", function () {
   const num = countInput.value;
   renderData = renderData.filter((item) => item.value.includes(num));
-  // console.log(savedFilter);
-
   // fix
-  if (countInput.value === "" ) {
-    filterItemsByType(savedFilter)
+  if (countInput.value === "") {
+    filterItemsByType(filterType);
   }
   console.log(num);
   render();
@@ -99,20 +97,18 @@ countInput.addEventListener("input", function () {
 maneButton.addEventListener("click", function Calculation() {
   const select = document.getElementById("select").value;
   const input = document.getElementById("input1").value;
-  //rename
-  const elem = ProcessKey[select];
-  const res = input + ": " + elem(input);
+  const funcType = ProcessKey[select];
+  const res = input + ": " + funcType(input);
 
-  // rename
-  const myObject = {
+  const productData = {
     id: objectCounter++,
     value: res,
     type: select,
     valueNum: +input,
+    dateOfCreation: Date.now(),
   };
-  addItem(myObject);
+  addItem(productData);
 });
-
 
 // Только обробатівает нажатие
 const onFilterClick = (event) => filterItemsByType(event.target.dataset.type);
