@@ -12,7 +12,7 @@ const maneButton = document.getElementById("mane__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
 const countInput = document.getElementById("input2");
 // remove
-let array = [];
+// let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
 let initialData = JSON.parse(localStorage.getItem("array"));
@@ -53,7 +53,7 @@ function render() {
 function addItem(newItem) {
   initialData.push(newItem);
   renderData = [...initialData];
-  filterItemsByType(filterType)
+  filterItemsByType(filterType);
   render();
   localStorage.setItem("array", JSON.stringify(initialData));
   //remove
@@ -85,29 +85,34 @@ countInput.addEventListener("input", function () {
   render();
 });
 
-// countInput.addEventListener('input', function () {
-//   console.log('++');
-//   if (countInput.value == "1" ) {
-//     filterItemsByType()
-
-//   }
-// })
-
 // создает елмент, фильтрует, рендерит
 maneButton.addEventListener("click", function Calculation() {
-  const select = document.getElementById("select").value;
+  // const select = document.getElementById("select").value;
+  const radios = document.getElementsByName("get__type");
+  let selectedValue;
+  radios.forEach((radio) => {
+    if (radio.checked) {
+      selectedValue = radio.value;
+    }
+  });
+  console.log(selectedValue);
   const input = document.getElementById("input1").value;
-  const funcType = ProcessKey[select];
+  const funcType = ProcessKey[selectedValue];
   const res = input + ": " + funcType(input);
 
   const productData = {
     id: objectCounter++,
     value: res,
-    type: select,
+    type: selectedValue,
     valueNum: +input,
     dateOfCreation: Date.now(),
   };
-  addItem(productData);
+  if (input === '') {
+    alert("Введите значение")
+  } else {
+    addItem(productData);
+  }
+
 });
 
 // Только обробатівает нажатие
