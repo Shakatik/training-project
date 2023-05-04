@@ -28,19 +28,33 @@
     <button id="all__button" class="btn__filter" type="button" data-type="all">
       All things
     </button>
-    <select
-      id="select"
-      name="get__type"
-      size="1"
-      required="required"
-      autofocus="active"
-    >
-      <option value="">Выберите значение</option>
-      <option value="FUNC1">Грибы</option>
-      <option value="FUNC2">Четность</option>
-      <option value="FUNC3">Коробки</option>
-    </select>
-    <input type="search" id="input2" />
+      <!-- <select
+        id="select"
+        name="get__type"
+        size="1"
+        required="required"
+        autofocus="active"
+      >
+        <option value="">Выберите значение</option>
+        <option value="FUNC1">Грибы</option>
+        <option value="FUNC2">Четность</option>
+        <option value="FUNC3">Коробки</option>
+      </select> -->
+    <input type="search" id="input2" />    
+    <label>
+      <input type="radio" name="get__type" value="FUNC1" required="required" autofocus="active" checked>
+      Грибы
+    </label>
+    
+    <label>
+      <input type="radio" name="get__type" value="FUNC2">
+      Четность
+    </label>
+    
+    <label>
+      <input type="radio" name="get__type" value="FUNC3">
+      Коробки
+    </label>
   </body>
 
   <script type="module" src="/main.mjs"></script>
