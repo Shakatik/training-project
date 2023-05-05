@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project1</title>
   </head>
-  <body style="background-color: rgb(171, 165, 238)">
-    <input id="input1" type="text" />
-    <button id="mane__button" class="btn" type="button">
+  <body style="background-color: rgb(214, 129, 188)">
+    <input id="input1" type="text" class="input__add" />
+    <button id="mane__button" class="btn__main" type="button">
       calculate
     </button>
     <button id="grib__button" class="btn__filter" type="button" data-type="FUNC1">
@@ -40,19 +40,19 @@
         <option value="FUNC2">Четность</option>
         <option value="FUNC3">Коробки</option>
       </select> -->
-    <input type="search" id="input2" />    
+    <input type="search" id="input2" class="input__search"/>    
     <label>
-      <input type="radio" name="get__type" value="FUNC1" required="required" autofocus="active" checked>
+      <input class="input__radio__maker" type="radio" name="get__type" value="FUNC1" required="required" autofocus="active" checked>
       Грибы
     </label>
     
     <label>
-      <input type="radio" name="get__type" value="FUNC2">
+      <input class="input__radio__maker" type="radio" name="get__type" value="FUNC2">
       Четность
     </label>
     
     <label>
-      <input type="radio" name="get__type" value="FUNC3">
+      <input class="input__radio__maker" type="radio" name="get__type" value="FUNC3">
       Коробки
     </label>
   </body>
