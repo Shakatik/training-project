@@ -12,10 +12,11 @@ const maneButton = document.getElementById("mane__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
 const countInput = document.getElementById("input2");
 // remove
-// let array = [];
+let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
 let initialData = JSON.parse(localStorage.getItem("array"));
+console.log(initialData)
 //пофиксать ошибку когда 0 элементов
 let renderData = [...initialData];
 let filterType = localStorage.getItem("filter-type");
@@ -75,12 +76,13 @@ function filterItemsByType(Type) {
 
 // Фильтр и поиск по введению в инпут
 countInput.addEventListener("input", function () {
+  filterItemsByType(filterType);
   const num = countInput.value;
   renderData = renderData.filter((item) => item.value.includes(num));
   // fix
-  if (countInput.value === "") {
-    filterItemsByType(filterType);
-  }
+  // if (countInput.value === "") {
+  //   filterItemsByType(filterType);
+  // }
   console.log(num);
   render();
 });
@@ -115,11 +117,16 @@ maneButton.addEventListener("click", function Calculation() {
 
 });
 
-// Только обробатівает нажатие
-const onFilterClick = (event) => filterItemsByType(event.target.dataset.type);
-
+// Только обробатівает нажатие и вешает класс активности
+const onFilterClick = (event) => {
+  const target = event.target;
+  const dataType = target.dataset.type;
+  filterButtons.forEach((button) => button.classList.remove("active"))
+  filterItemsByType(dataType);
+  target.classList.add("active")
+}
 // Только вешает обработчик на кнопки
-filterButtons.forEach((button) =>
+filterButtons.forEach((button, index) =>{
   button.addEventListener("click", onFilterClick)
-);
+});
 // поменять селект на радиобуттон с дефолтным значением
