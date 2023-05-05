@@ -1,0 +1,99 @@
+.btn__filter, .btn__main {
+    margin: 5px;
+    width: 90px;
+    height: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    box-shadow: 14px black;
+    color: #d5d8ff;
+    background-image: none;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    transition: background .3s;
+}
+.btn__filter:hover {
+    background-color: #d5dcf8;
+    overflow: hidden;
+    transform: scale(1.1);
+    transition: transform 0.4s;
+    color:#5678fe;
+}
+.btn__main:hover {
+    background-color: #9aacf1;
+    overflow: hidden;
+    transform: scale(1.1);
+    transition: transform 0.4s;
+    color:#3c4f9b;
+}
+.active {
+    background-color: #d5dcf8;
+    overflow: hidden;
+    transition: transform 0.4s;
+    color:#5678fe;
+  }
+
+.label{
+    color: #999;
+    font-size: 18px;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 15px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.input__add, .input__search {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(to right, #c7bfff, #d19ffb);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 16px;
+    font-family: sans-serif;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.input__search:focus {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  
+}
+.input__add:focus {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  
+}
+
+
+
+.input__radio__maker[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #d19ffb;
+    border-radius: 50%;
+    display: inline-block;
+    height: 16px;
+    margin: 0;
+    position: relative;
+    top: 4px;
+    width: 16px;
+    background-color:rgb(145, 0, 159);
+}
+.input__radio__maker[type="radio"]:checked:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+  }
+
