@@ -11,12 +11,14 @@ const ProcessKey = {
 const maneButton = document.getElementById("mane__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
 const countInput = document.getElementById("input2");
+const space = document.getElementById("space")
 // remove
-let array = [];
+// let array = [];
 
 // localStorage.setItem("array", JSON.stringify(array));
-let initialData = JSON.parse(localStorage.getItem("array"));
-console.log(initialData)
+// let initialData = JSON.parse(localStorage.getItem("array"));
+let initialData = JSON.parse(localStorage.getItem("array")) || [];
+
 //пофиксать ошибку когда 0 элементов
 let renderData = [...initialData];
 let filterType = localStorage.getItem("filter-type");
@@ -33,10 +35,12 @@ function render() {
   renderData.forEach((element) => {
     const deleteButton = document.createElement("button");
     deleteButton.appendChild(document.createTextNode("Delete"));
+    deleteButton.classList.add("btn__delete")
     const div = document.createElement("div");
     const li = document.createElement("li");
     li.id = "object" + objectCounter;
     li.textContent = element.value;
+    div.classList.add("product")
     div.append(li, deleteButton);
 
     deleteButton.addEventListener("click", function removeItem() {
