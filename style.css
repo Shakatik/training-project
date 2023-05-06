@@ -16,6 +16,24 @@
     border: 2px solid rgb(255, 255, 255);
     transition: background .3s;
 }
+.btn__delete {
+    margin: 5px;
+    width: 70px;
+    height: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    box-shadow: 14px black;
+    color: #d5d8ff;
+    background-image: none;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    transition: background .3s;
+}
 .btn__filter:hover {
     background-color: #d5dcf8;
     overflow: hidden;
@@ -25,6 +43,13 @@
 }
 .btn__main:hover {
     background-color: #9aacf1;
+    overflow: hidden;
+    transform: scale(1.1);
+    transition: transform 0.4s;
+    color:#3c4f9b;
+}
+.btn__delete:hover {
+    background-color: #f19a9a;
     overflow: hidden;
     transform: scale(1.1);
     transition: transform 0.4s;
@@ -97,3 +122,18 @@
     border-radius: 50%;
   }
 
+.space {
+    width: 700px;
+    height: 900px;
+    background-color: #ffffff;
+}
+.product {
+    width: 160px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: #be72ce;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
+}
