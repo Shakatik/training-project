@@ -11,19 +11,14 @@ const ProcessKey = {
 const maneButton = document.getElementById("mane__button");
 const filterButtons = document.querySelectorAll(".btn__filter");
 const countInput = document.getElementById("input2");
-const space = document.getElementById("space")
-// remove
-// let array = [];
+// const space = document.getElementById("space")
 
-// localStorage.setItem("array", JSON.stringify(array));
-// let initialData = JSON.parse(localStorage.getItem("array"));
 let initialData = JSON.parse(localStorage.getItem("array")) || [];
-
 //пофиксать ошибку когда 0 элементов
 let renderData = [...initialData];
-let filterType = localStorage.getItem("filter-type");
+let filterType = localStorage.getItem("filter-type") || "all";
+
 // заменить обжекткоунт на время создания
-let objectCounter = parseInt(localStorage.getItem("objectCounter")) || null;
 filterItemsByType(filterType);
 render();
 // только рендерит массив
@@ -38,7 +33,6 @@ function render() {
     deleteButton.classList.add("btn__delete")
     const div = document.createElement("div");
     const li = document.createElement("li");
-    li.id = "object" + objectCounter;
     li.textContent = element.value;
     div.classList.add("product")
     div.append(li, deleteButton);
@@ -61,8 +55,7 @@ function addItem(newItem) {
   filterItemsByType(filterType);
   render();
   localStorage.setItem("array", JSON.stringify(initialData));
-  //remove
-  localStorage.setItem("objectCounter", objectCounter + 1);
+
 }
 
 // Только фильтрует массив
@@ -83,10 +76,6 @@ countInput.addEventListener("input", function () {
   filterItemsByType(filterType);
   const num = countInput.value;
   renderData = renderData.filter((item) => item.value.includes(num));
-  // fix
-  // if (countInput.value === "") {
-  //   filterItemsByType(filterType);
-  // }
   console.log(num);
   render();
 });
@@ -102,26 +91,25 @@ maneButton.addEventListener("click", function Calculation() {
     }
   });
   console.log(selectedValue);
-  const input = document.getElementById("input1").value;
+  let input = document.getElementById("input1");
   const funcType = ProcessKey[selectedValue];
-  const res = input + ": " + funcType(input);
+  const res = input.value + ": " + funcType(input.value);
 
   const productData = {
-    id: objectCounter++,
     value: res,
     type: selectedValue,
-    valueNum: +input,
+    valueNum: +input.value,
     dateOfCreation: Date.now(),
   };
-  if (input === '') {
+  if (input.value === '') {
     alert("Введите значение")
   } else {
     addItem(productData);
+    input.value = "";
   }
 
 });
-
-// Только обробатівает нажатие и вешает класс активности
+// Только обробатівает нажатие и вешает стиль активности
 const onFilterClick = (event) => {
   const target = event.target;
   const dataType = target.dataset.type;
@@ -132,5 +120,8 @@ const onFilterClick = (event) => {
 // Только вешает обработчик на кнопки
 filterButtons.forEach((button, index) =>{
   button.addEventListener("click", onFilterClick)
+  if (button.dataset.type === filterType) {
+    button.classList.add("active");
+  }
 });
 // поменять селект на радиобуттон с дефолтным значением
