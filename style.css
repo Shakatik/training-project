@@ -128,12 +128,18 @@
     background-color: #ffffff;
 }
 .product {
-    width: 160px;
-    height: 40px;
+    width: 180px;
+    height: 60px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 30px;
-    background-color: #be72ce;
+    padding: 10px;
+    background-size: cover;
+    background-image: url(img/vlad.jpg);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: left;
+    color:#fff;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
 }
